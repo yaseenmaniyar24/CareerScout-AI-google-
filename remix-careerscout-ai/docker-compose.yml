@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - SERPAPI_API_KEY=${SERPAPI_API_KEY}
+      - DEMO_MODE=${DEMO_MODE:-false}
+      - PORT=8000
+    restart: unless-stopped
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - SERPAPI_API_KEY=${SERPAPI_API_KEY}
+      - DEMO_MODE=${DEMO_MODE:-false}
+      - NODE_ENV=production
+    restart: unless-stopped

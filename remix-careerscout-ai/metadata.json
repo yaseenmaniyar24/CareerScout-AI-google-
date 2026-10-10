@@ -1,0 +1,8 @@
+{
+  "name": "Remix CareerScout AI",
+  "description": "Find the opportunity. Understand the requirements. Become qualified. An AI career intelligence agent powered by SerpApi live search and Google Gemini for Indian college students and fresh grads.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
